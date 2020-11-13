@@ -1,10 +1,12 @@
 import React from 'react';
+import { Provider } from 'react-redux';
+// import Router from 'src/routes';
 
-const App: React.FC = () => {
-  return (
-    <div className="App">
-    </div>
-  );
-}
+import store from './store';
 
+const App: React.FC = () => (
+  <Provider store={store}>
+    <div></div>
+  </Provider>
+);
 export default App;
