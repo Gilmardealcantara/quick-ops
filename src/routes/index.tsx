@@ -11,8 +11,9 @@ export default function Routes() {
     return (
         <ConnectedRouter history={history}>
             <Switch>
-                <Route path="/Login" component={() => <div>Login</div>} />
-                <PrivateRoute path="/" component={Dashboard} />
+                <Route path="/login" component={() => <div>Login</div>} />
+                <PrivateRoute path="/dashboard" component={Dashboard} />
+                <PrivateRoute path="/" component={() => <div>Home</div>} />
             </Switch>
         </ConnectedRouter>
     );

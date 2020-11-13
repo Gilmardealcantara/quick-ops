@@ -22,7 +22,7 @@ const PrivateRoute = ({ component, ...rest }: RouteProps) => {
 
         return <Route {...rest} render={render} />;
     }
-    return <Redirect to={{ pathname: '/Login' }} />;
+    return <Redirect to={{ pathname: '/login' }} />;
 };
 
 export default PrivateRoute;
