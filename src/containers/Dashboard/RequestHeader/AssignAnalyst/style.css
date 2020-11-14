@@ -1,0 +1,34 @@
+.request-header-assign-analyst {
+    display: flex;
+    flex: 2;
+    flex-direction: column;
+    justify-content: center;
+    width: '100vw';
+}
+
+.request-header-assign-analyst-title {
+    font-weight: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    margin-bottom: 5px;
+    color: #ffffff;
+}
+
+.request-header-assign-analyst-key {
+    margin-top: 15px;
+    width: 292px;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.71;
+    letter-spacing: normal;
+    color: #ffffff;
+} 
+
+.request-header-assign-analyst-value {
+    
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: #ffffff;
+}

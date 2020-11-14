@@ -1,0 +1,36 @@
+.request-header-key-value-list {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    width: 50vw;
+}
+
+.request-header-key-value {
+    display: flex;
+    padding: 5px;
+}
+
+.request-header-key {
+    width: 72px;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: #ffffff;
+}
+
+.request-header-value {
+    width: 292px;
+    margin-left: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1.71;
+    letter-spacing: normal;
+    color: #ffffff;
+}
+
+.request-header-divider{
+    width: 2px;
+    margin: 10px 15px 23px 26px;
+    border: solid 1px #fafbfc;
+}
