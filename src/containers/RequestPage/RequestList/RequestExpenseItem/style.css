@@ -7,6 +7,8 @@
     display: flex;
     flex: 1;
     align-items: flex-start;
+    justify-content: space-between;
+
 }
 
 .expense-request-item-icon {
@@ -44,7 +46,7 @@
 /* type value */
 .expense-request-item-type-value{
     display: flex;
-    margin: 0 220px 3px 0;
+    width: 50%;
 }
 
 .expense-request-item-type {
