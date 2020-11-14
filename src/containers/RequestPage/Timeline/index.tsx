@@ -5,7 +5,7 @@ import RequestExpenseItem from './RequestExpenseItem';
 import './style.css'
 
 
-const RequestList =  () => (
+const Timeline =  () => (
     <div className="request-list">
         <RequestAccountabilityItem/>
         <RequestEvaluationItem/>
@@ -13,4 +13,4 @@ const RequestList =  () => (
     </div>
 );
 
-export default RequestList;
+export default Timeline;

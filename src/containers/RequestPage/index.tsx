@@ -1,11 +1,11 @@
 import React from 'react';
 import RequestHeader from './RequestHeader';
-import RequestList from './RequestList';
+import Timeline from './Timeline';
 
 const RequestPage = () => (
     <div className="request-page">
         <RequestHeader/>
-        <RequestList/>
+        <Timeline/>
     </div>
 );
 
