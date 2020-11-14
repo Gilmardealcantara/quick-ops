@@ -1,0 +1,108 @@
+.evaluation-request-item {
+    height: 154px;
+    /* margin: 24px 1px 24px 2px; */
+    padding: 24px 81px 19px 48px;
+    border-radius: 6px;
+    background-color: #ffffff;
+    display: flex;
+    flex: 1;
+    align-items: flex-start;
+}
+
+.evaluation-request-item-icon {
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+}
+
+.evaluation-request-item-icon-container {
+    width: 59px;
+    height: 59px;
+    margin: 0 9px 10px 8px;
+    padding: 21px 17px 17px;
+    background-color: #f0f3f7;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.evaluation-request-item-icon-container i{
+    font-size: 20px;
+    color: #5f6772;
+    padding: 0px;
+}
+
+.evaluation-request-item-icon-date {
+    margin: 10px 0 0;
+    font-size: 14px;
+    line-height: bold;
+    letter-spacing: normal;
+    color: #545b64 !important;
+}
+
+.evaluation-request-item-type {
+    display: flex;
+
+    flex-direction: column;
+}
+
+.evaluation-request-item-type-title{
+  height: 16px;
+  margin: 0 488px 3px 0;
+  font-size: 12px;
+  font-weight: bold;
+  color: #d0d3d6;  
+}
+
+.evaluation-request-item-type-content{
+    margin: 3px 0 0;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #545b64; 
+  }
+
+.evaluation-request-item-status {
+    height: 50px;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+}
+
+.evaluation-request-item-status-badge {
+    width: 79px;
+    height: 24px;
+    margin: 3px 0 0;
+    padding: 6px 12px;
+    border-radius: 18px;
+    border: solid 1px #03a046;
+    background-color: #e6fff0;
+    display: flex;
+}
+.evaluation-request-item-status-badge span {
+    width: 55px;
+    height: 12px;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 1;
+    letter-spacing: normal;
+    color: #03a046;
+}
+
+.evaluation-request-item-see-approval {
+    height: 50px;
+    width: 20%;
+    display: flex;
+    flex-direction: line;
+    justify-content: flex-end;
+}
+
+.evaluation-request-item-see-approval span, i {
+    font-size: 12px;
+    letter-spacing: normal;
+    color: #51c1c3;
+    padding-left:10px;
+    align-self: flex-start;
+}
