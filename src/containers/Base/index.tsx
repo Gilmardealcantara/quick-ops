@@ -21,7 +21,7 @@ const BasePage = (props: Props) => {
                 <SideBar />
                 <Layout className="site-layout">
                     <Content style={{ margin: '0 16px' }}>
-                        <Breadcrumb style={{ margin: '16px 0' }}>
+                        <Breadcrumb style={{ margin: '16px 0', backgroundColor:"#f0f3f7", color:"#51c1c3" }}>
                             <Breadcrumb.Item>Painel</Breadcrumb.Item>
                             <Breadcrumb.Item>Solicitação</Breadcrumb.Item>
                         </Breadcrumb>
