@@ -1,6 +1,6 @@
 .evaluation-request-item {
     height: 154px;
-    /* margin: 24px 1px 24px 2px; */
+    margin: 24px 1px 24px 2px;
     padding: 24px 81px 19px 48px;
     border-radius: 6px;
     background-color: #ffffff;
@@ -41,9 +41,9 @@
     color: #545b64 !important;
 }
 
+/* type */
 .evaluation-request-item-type {
     display: flex;
-
     flex-direction: column;
 }
 

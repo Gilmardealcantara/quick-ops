@@ -1,56 +1,142 @@
-.request-item-icon {
-    width: 30%;
+.expense-request-item {
+    height: 154px;
+    margin: 24px 1px 24px 2px;
+    padding: 24px 81px 19px 48px;
+    border-radius: 6px;
+    background-color: #ffffff;
+    display: flex;
+    flex: 1;
+    align-items: flex-start;
+}
+
+.expense-request-item-icon {
+    width: 100px;
     display: flex;
     flex-direction: column;
 }
 
-.request-item-icon-container {
+.expense-request-item-icon-container {
     width: 59px;
     height: 59px;
     margin: 0 9px 10px 8px;
     padding: 21px 17px 17px;
-    background-color: #ecf8f8;
+    background-color: #e7f2fd;
     border-radius: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.request-item-icon-asterisk{
+.expense-request-item-icon-container i{
     font-size: 20px;
-    color: #03a046;
+    color: #0f68bd;
+    padding: 0px;
 }
 
-.request-item-icon-date {
-    width: 76px;
+.expense-request-item-icon-date {
     margin: 10px 0 0;
     font-size: 14px;
     line-height: bold;
     letter-spacing: normal;
-    text-align: center;
     color: #545b64 !important;
 }
 
-.request-item-type {
-    width: 100%;
+/* type value */
+.expense-request-item-type-value{
+    display: flex;
+    margin: 0 220px 3px 0;
+}
+
+.expense-request-item-type {
     display: flex;
     flex-direction: column;
 }
 
-.request-item-type-title{
-  width: 36px;
+.expense-request-item-title {
   height: 16px;
-  margin: 0 488px 3px 0;
+  margin: 0 100px 3px 0;
   font-size: 12px;
   font-weight: bold;
   color: #d0d3d6;  
 }
 
-.request-item-type-content{
+.expense-request-item-content {
     margin: 3px 0 0;
     font-size: 20px;
     font-weight: bold;
     line-height: normal;
     letter-spacing: normal;
     color: #545b64; 
-  }
+}
+
+.expense-request-item-desc{
+    font-size: 14px;
+    color: #545b64;
+}
+
+.expense-request-item-status {
+    height: 50px;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* badges */
+.expense-request-item-status-badge-ok {
+    width: 79px;
+    height: 24px;
+    margin: 3px 0 0;
+    padding: 6px 12px;
+    border-radius: 18px;
+    border: solid 1px #03a046;
+    background-color: #e6fff0;
+    display: flex;
+}
+.expense-request-item-status-badge-ok span {
+    width: 55px;
+    height: 12px;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 1;
+    letter-spacing: normal;
+    color: #03a046;
+}
+
+.expense-request-item-status-badge-default {
+    width: 79px;
+    height: 24px;
+    margin: 3px 0 0;
+    padding: 6px 12px;
+    border-radius: 18px;
+    border: solid 1px #545b64;
+    background-color: #f0f3f7;
+    display: flex;
+}
+.expense-request-item-status-badge-default span {
+    width: 55px;
+    height: 12px;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 1;
+    letter-spacing: normal;
+    color: #545b64;
+}
+
+.expense-request-item-see-approval {
+    height: 50px;
+    width: 20%;
+    display: flex;
+    flex-direction: line;
+    justify-content: flex-end;
+}
+
+.expense-request-item-see-approval span {
+    font-size: 12px;
+    color: #51c1c3;
+    padding-left:10px;
+}
+
+.expense-request-item-see-approval i {
+    font-size: 15px;
+    color: #51c1c3;
+}
