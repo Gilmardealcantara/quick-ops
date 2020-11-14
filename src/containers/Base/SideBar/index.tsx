@@ -19,7 +19,6 @@ const SideBar = () => {
             collapsed={collapsed}
             trigger={null}
         >
-
             <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline" style={{ backgroundColor: "#053d4e" }}>
                 <Menu.Item
                     style={{ backgroundColor: "#053d4e" }}
@@ -36,8 +35,8 @@ const SideBar = () => {
                 <Menu.Item 
                     style={{backgroundColor: "#053d4e"}} 
                     icon={<PieChartOutlined key="3"/>}
-                    onClick={() => history.push("/dashboard")}
-                > Dashboard </Menu.Item>
+                    onClick={() => history.push("/requests")}
+                > Solicitações</Menu.Item>
             </Menu>
         </Layout.Sider>
     );

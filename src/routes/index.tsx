@@ -4,7 +4,7 @@ import { ConnectedRouter } from 'connected-react-router';
 
 import history from './history';
 import PrivateRoute from '../routes/PrivateRoute';
-import Dashboard from '../containers/Dashboard';
+import RequestPage from '../containers/RequestPage';
 
 
 export default function Routes() {
@@ -12,7 +12,7 @@ export default function Routes() {
         <ConnectedRouter history={history}>
             <Switch>
                 <Route path="/login" component={() => <div>Login</div>} />
-                <PrivateRoute path="/dashboard" component={Dashboard} />
+                <PrivateRoute path="/requests" component={RequestPage} />
                 <PrivateRoute path="/" component={() => <div>Home</div>} />
             </Switch>
         </ConnectedRouter>

@@ -1,10 +1,10 @@
 import React from 'react';
 import RequestHeader from './RequestHeader';
 
-const Dashboard = () => (
-    <>
+const RequestPage = () => (
+    <div className="request-page">
         <RequestHeader/>
-    </>
+    </div>
 );
 
-export default Dashboard;
+export default RequestPage;

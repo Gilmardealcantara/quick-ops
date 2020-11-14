@@ -19,9 +19,11 @@ const BasePage = (props: Props) => {
             <Header />
             <Layout style={{ minHeight: '95vh' }}>
                 <SideBar />
-                <Layout className="site-layout">
-                    <Content style={{ margin: '0 16px' }}>
-                        <Breadcrumb style={{ margin: '16px 0', backgroundColor:"#f0f3f7", color:"#51c1c3" }}>
+                <Layout className="site-layout" style={{
+                        backgroundColor:"#f4f6fa"
+                    }}>
+                    <Content>
+                        <Breadcrumb style={{ padding: '10px 0px 10px 40px', backgroundColor:"#f0f3f7", color:"#51c1c3" }}>
                             <Breadcrumb.Item>Painel</Breadcrumb.Item>
                             <Breadcrumb.Item>Solicitação</Breadcrumb.Item>
                         </Breadcrumb>

@@ -2,7 +2,7 @@ import React from 'react';
 import { Layout } from 'antd';
 
 const Header = () => (
-    <Layout.Header className="site-layout-background" style={{
+    <Layout.Header style={{
             paddingTop: "10px",
             paddingRight: "15px",
             paddingBottom: "9px",
