@@ -27,7 +27,7 @@ const BasePage = (props: Props) => {
                             <Breadcrumb.Item>Painel</Breadcrumb.Item>
                             <Breadcrumb.Item>Solicitação</Breadcrumb.Item>
                         </Breadcrumb>
-                        <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
+                        <div className="site-layout-background" style={{ minHeight: 360 }}>
                             {React.createElement(props.component, props.routeProps)}
                         </div>
                     </Content>
