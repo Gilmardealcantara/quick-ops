@@ -9,6 +9,7 @@ import {getAppStatus} from '../../store/modules/appStatus/actions'
 import RequestHeader from './RequestHeader';
 import RequestSideBar from './RequestSideBar';
 import Timeline from './Timeline';
+import AddNewExpense from './AddNewExpense';
 import Error from '../../components/Error';
 
 import './style.css';
@@ -28,6 +29,7 @@ const RequestPage = () => {
             <div className="request-page">
                 <div style={{width:'75%'}}>
                     <RequestHeader/>
+                    <AddNewExpense />
                     <Timeline/>
                 </div>
                 <RequestSideBar/>
