@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import { ConnectedRouter } from 'connected-react-router';
 
 import history from './history';
@@ -11,8 +11,7 @@ export default function Routes() {
     return (
         <ConnectedRouter history={history}>
             <Switch>
-                <PrivateRoute path="/error" component={() => <div>error</div>} />
-                <PrivateRoute path="/loading" component={() => <div>loading</div>} />
+                <Route path="/login" component={() => <div>Login</div>} />
                 <PrivateRoute path="/requests" component={RequestPage} />
                 <PrivateRoute path="/" component={() => <div>Home</div>} />
             </Switch>
