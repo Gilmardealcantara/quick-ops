@@ -19,7 +19,7 @@ const RequestPage = () => {
     const dipatch = useDispatch();
     const { loading, ok } = useSelector<ApplicationState, AppStatusState>((state) => ({ ...state.appStatus, ok:true}));
 
-    useEffect(() => { dipatch(getAppStatus()); }, []);
+    // useEffect(() => { dipatch(getAppStatus()); }, []);
 
     if(!ok) return <Error />
 
