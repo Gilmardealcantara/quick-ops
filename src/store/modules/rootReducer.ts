@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
 import { connectRouter } from 'connected-react-router';
 import { History } from 'history';
-// import general from './general';
+import appStatus from './appStatus';
 
 export default (history: History<any>) =>
     combineReducers({
         router: connectRouter(history),
-        // general,
+        appStatus
     });

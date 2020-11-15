@@ -3,13 +3,14 @@ import createSagaMiddleware from 'redux-saga';
 import { routerMiddleware, RouterState } from 'connected-react-router';
 
 import rootReducer from './modules/rootReducer';
-// import rootSaga from './modules/rootSaga';
+import rootSaga from './modules/rootSaga';
 import history from '../routes/history';
+import { AppStatusState } from './modules/appStatus/types';
 
 
 export interface ApplicationState {
     router: RouterState;
-    // general: GeneralState;
+    appStatus: AppStatusState;
 }
 
 const sagaMiddleware = createSagaMiddleware();
@@ -21,6 +22,6 @@ const store: Store<ApplicationState> = createStore(
     applyMiddleware(...middlewares)
 );
 
-// sagaMiddleware.run(rootSaga);
+sagaMiddleware.run(rootSaga);
 
 export default store;
