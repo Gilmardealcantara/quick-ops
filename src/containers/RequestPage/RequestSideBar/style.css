@@ -140,7 +140,7 @@
 
 .request-side-bar-coin .extract-table .extract-table-head span {
     margin: 10px 0px 0px 0px;
-    font-size: 12px;
+    font-size: 10px;
     line-height: 1.75;
     color: #053d4e;
 }
@@ -153,15 +153,14 @@
 }
 
 .request-side-bar-coin .extract-table .extract-table-row .extract-key {
-    font-size: 14px;
+    font-size: 10px;
     font-weight: bold;
     line-height: 1.5;
     color: #053d4e;
 }
 
 .request-side-bar-coin .extract-table .extract-table-row .extract-desc {
-    margin: 4px 75px 0 0;
-    font-size: 12px;
+    font-size: 10px;
     font-weight: 300;
     color: #9ea4ac;
 }
