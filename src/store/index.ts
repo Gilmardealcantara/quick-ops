@@ -6,11 +6,13 @@ import rootReducer from './modules/rootReducer';
 import rootSaga from './modules/rootSaga';
 import history from '../routes/history';
 import { AppStatusState } from './modules/appStatus/types';
+import { HeaderDataState } from './modules/headerData/types';
 
 
 export interface ApplicationState {
     router: RouterState;
     appStatus: AppStatusState;
+    headerData: HeaderDataState
 }
 
 const sagaMiddleware = createSagaMiddleware();
