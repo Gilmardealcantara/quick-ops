@@ -29,7 +29,7 @@ const RequestPage = () => {
             <div className="request-page">
                 <div style={{ width: '75%' }}>
                     <RequestHeader />
-                    {/* <AddNewExpense /> */}
+                    <AddNewExpense />
                     <Timeline />
                 </div>
                 <RequestSideBar />

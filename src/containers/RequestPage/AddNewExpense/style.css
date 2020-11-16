@@ -26,7 +26,7 @@
 
 .add-new-expense-form {
     margin: 24px 0px 0px 24px;
-    padding: 14px 12px 18px 43px;
+    padding: 20px 0px 20px 0px;
     border-radius: 12px;
     background-color: #fafbfc;
 }
@@ -34,17 +34,18 @@
 /* form */
 /* attach */
 .add-new-expense-form .expense-form-title {
+    padding-left: 25px;
     font-size: 20px;
     font-weight: bold;
     line-height: 1.5;
     color: #353a40;
 }
 
-.add-new-expense-form div {
-    margin-top: 10px;
+.add-new-expense-form .expense-form-content {
     display: flex;
     flex: 1 1 1;
     width: 100%;
+    padding-top: 10px;
 }
 
 .add-new-expense-form .receipt-attach {
@@ -103,9 +104,47 @@
 /* inputs */
 
 .add-new-expense-form .receipt-form-field {
-    background-color: red;
+    display: flex;
+    flex-direction: column;
+    width: 40%;
 }
 
-.add-new-expense-form .receipt-form-field {
-    height: 400px;
+.add-new-expense-form .receipt-form-field-selects {
+    display: flex;
 }
+.add-new-expense-form .receipt-form-field-select {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0px 5px 5px 5px;
+    /* width: 5; */
+}
+
+.add-new-expense-form  .action-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 25px 25px 5px 5px;
+}
+
+.add-new-expense-form  .action-buttons button {
+    margin: 3px;
+}
+
+.add-new-expense-form  .action-buttons span:first-child {
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: solid 1px #6b7480;
+  background-color: #ffffff;
+  color: #6b7480;
+}
+
+.add-new-expense-form  .action-buttons span:last-child {
+  margin: 0 0 0 5px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  background-color: #51c1c3;
+  color: #ffffff
+}
+
+
