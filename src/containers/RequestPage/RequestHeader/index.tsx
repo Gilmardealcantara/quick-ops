@@ -1,8 +1,10 @@
 import { Skeleton } from 'antd';
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux';
-import { ApplicationState } from '../../../store';
+import { format } from 'date-fns'
 
+
+import { ApplicationState } from '../../../store';
 import { loadHeaderData } from '../../../store/modules/headerData/actions';
 import { HeaderDataState } from '../../../store/modules/headerData/types';
 
@@ -13,9 +15,19 @@ import './style.css';
 
 const RequestHeader = () => {
     const dispatch = useDispatch()
-    const { loading, data, error } = useSelector<ApplicationState, HeaderDataState>(state => state.headerData);
+    const { loading, data } = useSelector<ApplicationState, HeaderDataState>(state => state.headerData);
 
     useEffect(() => { dispatch(loadHeaderData()); }, [])
+
+    const formatDate = (dateInt: number) => format(new Date(dateInt), "dd/MM/yyyy");
+
+    const formatPeopleQnt = (qnt: number) => {
+        return qnt == 1 ? `${qnt} pessoa` : `${qnt} pessoas`;
+    }
+
+    const formatHasBreakfast = (hasCoffe?: boolean) => {
+        return hasCoffe ? "sim" : "não";
+    }
 
     return (
         <div className="request-reader-container">
@@ -29,17 +41,17 @@ const RequestHeader = () => {
                         <span className="request-reader-title">{data.title}</span>
                         <div style={{ display: "flex" }}>
                             <div className={"request-header-key-value-list"}>
-                                <KeyValue name={"Nome"} value={"Back Office Team"} />
-                                <KeyValue name={"Email"} value={"backoffice@hotmart.com"} />
-                                <KeyValue name={"Justificativa"} value={"Reembolso referente a confraternização das equipes Backoffice / BI / Analytics."} />
-                                <KeyValue name={"Finalidade"} value={"confraternização"} />
-                                <KeyValue name={"Projeto"} value={"Afiliados do Brasil"} />
-                                <KeyValue name={"Data"} value={"20/12/2020"} />
-                                <KeyValue name={"quantidade"} value={"33 pessoas"} />
-                                <KeyValue name={"Incluir Café da Manhã"} value={"não"} />
+                                <KeyValue name={"Nome"} value={data.collaborator.name} />
+                                <KeyValue name={"Email"} value={data.collaborator.email} />
+                                <KeyValue name={"Justificativa"} value={data.justification} />
+                                <KeyValue name={"Finalidade"} value={data.purpose} />
+                                <KeyValue name={"Projeto"} value={data.project.title} />
+                                <KeyValue name={"Data"} value={formatDate(data.createdOn)} />
+                                <KeyValue name={"quantidade"} value={formatPeopleQnt(data.accountabilityExtraInfo.amountOfPeople)} />
+                                <KeyValue name={"Incluir Café da Manhã"} value={formatHasBreakfast(data.accountabilityExtraInfo.budgetForBreakfast)} />
                             </div>
                             <span className="request-header-divider"></span>
-                            <AssignAnalyst />
+                            <AssignAnalyst costCenters={data.costCenters} />
                         </div>
                     </>
                 )}

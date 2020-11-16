@@ -33,7 +33,7 @@ interface AccountabilityExtraInfo {
     destination: string
 }
 
-interface CostCenter {
+export interface CostCenter {
     id: number,
     percentage: number,
     name: string,
@@ -44,7 +44,7 @@ interface CostCenter {
 
 export interface HeaderData {
     id: number,
-    createdOn: Date,
+    createdOn: number,
     title: string,
     type: string,
     collaborator: Person,
