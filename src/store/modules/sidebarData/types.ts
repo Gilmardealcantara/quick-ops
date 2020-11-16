@@ -22,7 +22,7 @@ export interface SideBarData {
     accountabilityId: number,
     accountabilityStatus: string,
     currency: Currency,
-    declared: string,
+    declared: number,
     approved: number,
     received: number,
     returned: number,

@@ -8,9 +8,16 @@ interface Props {
 }
 
 const RequestExpenseItem = ({ item }: Props) => {
+    const showCurrency = (value: number) => {
+        let formatValue = "0,00"
+        if (value != 0)
+            formatValue = value.toFixed(2).replace('.', ',');
+        return `${item.currencySymbol} ${formatValue}`;
+    }
+
     const getIconClass = (code: string) => code ? `fas fa-${code}` : "fas fa-money-check-alt";
-    const getCurrencyAmountSpent = () => `${item.currencySymbol} ${item.amountSpent}`;
-    const getCurrencyAmountTotal = () => `Valor da nota: ${item.currencySymbol} ${item.amountTotal}`;
+    const getCurrencyAmountSpent = () => showCurrency(item.amountSpent);
+    const getCurrencyAmountTotal = () => `Valor da nota: ${showCurrency(item.amountTotal)}`;
 
     return (
         <div className="expense-request-item">

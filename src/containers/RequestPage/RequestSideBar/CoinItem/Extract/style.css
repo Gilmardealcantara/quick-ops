@@ -1,0 +1,70 @@
+/* extract */
+.request-side-bar-coin .extract-title {
+    margin: 30px 0px 10px 0;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1.5;
+    color: #353a40;
+    align-self: flex-start;
+}
+
+.request-side-bar-coin .extract-divider {
+    width: 100%;
+    border: solid 1px #f0f3f7;
+}
+
+.request-side-bar-coin .extract-table {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.request-side-bar-coin .extract-table div {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.request-side-bar-coin .extract-table div span:first-child {
+   width: 50%;
+}
+
+.request-side-bar-coin .extract-table .extract-table-row span:first-child {
+    display: flex;
+    flex-direction: column;
+}
+
+.request-side-bar-coin .extract-table .extract-table-head span {
+    margin: 10px 0px 0px 0px;
+    font-size: 10px;
+    line-height: 1.75;
+    color: #053d4e;
+}
+
+
+.request-side-bar-coin .extract-table .extract-table-row .extract-key {
+    font-size: 10px;
+    font-weight: bold;
+    line-height: 1.5;
+    color: #053d4e;
+}
+
+.request-side-bar-coin .extract-table .extract-table-row .extract-value {
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1.5;
+    color: #053d4e;
+}
+
+.request-side-bar-coin .extract-table .extract-desc {
+    font-size: 10px;
+    font-weight: 300;
+    color: #9ea4ac;
+}
+
+.request-side-bar-coin .extract-table .extract-table-row .extract-value-received {
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1.5;
+    color: #4acc82;
+}
