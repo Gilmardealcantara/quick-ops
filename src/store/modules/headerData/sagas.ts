@@ -1,4 +1,3 @@
-/* eslint-disable no-debugger */
 import { put, call } from 'redux-saga/effects';
 import { API_URL } from '../../../utils/constants';
 import { setHeaderData, setHeaderDataError } from './actions';
