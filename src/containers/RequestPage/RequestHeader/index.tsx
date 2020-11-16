@@ -25,8 +25,8 @@ const RequestHeader = () => {
         return qnt == 1 ? `${qnt} pessoa` : `${qnt} pessoas`;
     }
 
-    const formatHasBreakfast = (hasCoffe?: boolean) => {
-        return hasCoffe ? "sim" : "não";
+    const formatHasBreakfast = (hasCoffee?: boolean) => {
+        return hasCoffee ? "sim" : "não";
     }
 
     return (

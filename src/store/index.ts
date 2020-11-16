@@ -7,12 +7,14 @@ import rootSaga from './modules/rootSaga';
 import history from '../routes/history';
 import { AppStatusState } from './modules/appStatus/types';
 import { HeaderDataState } from './modules/headerData/types';
+import { TimelineState } from './modules/timeline/types';
 
 
 export interface ApplicationState {
     router: RouterState;
     appStatus: AppStatusState;
-    headerData: HeaderDataState
+    headerData: HeaderDataState;
+    timeline: TimelineState;
 }
 
 const sagaMiddleware = createSagaMiddleware();

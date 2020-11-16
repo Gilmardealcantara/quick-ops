@@ -1,19 +1,29 @@
+import { format } from 'date-fns';
 import React from 'react';
+import { TimelineItem } from '../../../../store/modules/timeline/types';
 import './style.css'
 
-const RequestAccountabilityItem =  () => (
-    <div className="accountability-request-item">
-        <div className="accountability-request-item-icon">
-            <div className="accountability-request-item-icon-container">
-                <i className="fas fa-asterisk"></i>
+interface Props {
+    item: TimelineItem;
+}
+
+const RequestAccountabilityItem = ({ item }: Props) => {
+    const getIconClass = (code: string) => code ? `fas fa-${code}` : "fas fa-asterisk";
+
+    return (
+        <div className="accountability-request-item">
+            <div className="accountability-request-item-icon">
+                <div className="accountability-request-item-icon-container">
+                    <i className={getIconClass(item.expenseTypeIcon)}></i>
+                </div>
+                <span className="accountability-request-item-icon-date">{format(new Date(item.cardDate), "dd/MM/yyyy")}</span>
             </div>
-            <span className="accountability-request-item-icon-date">26/03/2020</span>
+            <div className="accountability-request-item-type" >
+                <span className="accountability-request-item-type-title">TIPO</span>
+                <span className="accountability-request-item-type-content">{item.notes || "Não apresenta notas"}</span>
+            </div>
         </div>
-        <div className="accountability-request-item-type" >
-            <span className="accountability-request-item-type-title">TIPO</span>
-            <span className="accountability-request-item-type-content">Despesas enviadas para aprovação por Thiago Marques</span>
-        </div>
-    </div>
-);
+    )
+};
 
 export default RequestAccountabilityItem;

@@ -6,10 +6,13 @@ import { getAppStatusFromApi } from './appStatus/sagas';
 import { HeaderDataTypes } from './headerData/types';
 import { loadHeaderDataFromApi } from './headerData/sagas';
 
+import { TimelineTypes } from './timeline/types';
+import { loadTimelineDataFromApi } from './timeline/sagas';
 
 export default function* rootSaga() {
     return yield all([
         takeLatest(AppStatusTypes.GET, getAppStatusFromApi),
         takeLatest(HeaderDataTypes.LOAD, loadHeaderDataFromApi),
+        takeLatest(TimelineTypes.LOAD, loadTimelineDataFromApi),
     ]);
 }
