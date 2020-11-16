@@ -26,7 +26,7 @@ interface AccountabilityExtraInfo {
     departureOn?: Date,
     arrivalOn?: Date,
     budgetForBreakfast?: boolean,
-    eventDate: 1589425200000,
+    eventDate: number,
     amountOfPeople: number,
     requestedCurrency: string,
     amountRequested: string,
