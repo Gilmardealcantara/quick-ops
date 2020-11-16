@@ -2,6 +2,7 @@ import React from 'react';
 import { Image } from 'antd';
 
 import dog1 from '../../assets/imgs/sad-dog-1.png';
+import './style.css';
 
 const Error = () => (
     <div className="request-page-error">

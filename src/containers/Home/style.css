@@ -1,0 +1,18 @@
+.home-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.home-page .home-welcome {
+    font-size: 20px;
+    font-weight: bold;
+    color: #51c1c3;
+}
+
+.home-page .home-tip {
+  font-size: 10px;
+  line-height: 1.5;
+  color: #848a91;
+}
