@@ -1,0 +1,25 @@
+
+.add-new-expense-form .receipt-form-container {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+}
+
+.add-new-expense-form .receipt-form-fields {
+    display: flex;
+}
+
+.add-new-expense-form .receipt-form-field {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0px 5px 5px 5px;
+}
+
+.add-new-expense-form .receipt-form-field span:first-child {
+  font-size: 10px;
+  font-weight: bold;
+  line-height: 1.5;
+  color: #353a40;
+}
+
