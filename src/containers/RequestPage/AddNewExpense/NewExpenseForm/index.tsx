@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
-import { DatePicker, Input, InputNumber, Select } from 'antd';
+import { Alert, DatePicker, Input, InputNumber, notification, Select } from 'antd';
+import { SmileOutlined } from '@ant-design/icons';
 
 import { expenseTypesOptions, currencyOptions, currencyFormatter, currencyParser } from './FormHelper';
 
 import './style.css';
+import { API_URL } from '../../../../utils/constants';
+import FetchAPI from '../../../../services/FetchApi';
 
 
 interface Expense {
@@ -14,13 +17,40 @@ interface Expense {
     amountTotal?: number,
     notes?: string,
     resourceUrl?: string;
-    cardDate?: number
+    cardDate?: number;
+}
+
+interface ApiResponse {
+    type: "error" | "success" | "warning";
+    message: string;
 }
 
 const NewExpenseForm = () => {
     const [expense, setExpense] = useState<Expense>({});
+    const [response, setResponse] = useState<ApiResponse>();
+    const [loading, setLoading] = useState<boolean>();
 
     const amountParser = (value: number | string | undefined) => Number((value as number).toFixed(2))
+
+    const openNotification = (response: ApiResponse) => {
+        notification.open({
+            message: response.message,
+            type: response.type
+        });
+    };
+
+    const addNewExpense = async () => {
+        const fetchApi = new FetchAPI(API_URL);
+        setLoading(true);
+        const { data, error } = await fetchApi.post("/expense/ad", expense);
+        setLoading(false);
+        if (!error) {
+            setExpense({});
+            openNotification({ message: "Despesa adicionda com sucesso", type: "success" })
+        } else {
+            openNotification({ message: "Falha ao salvar dados, tente novamente mais tarde", type: "error" })
+        }
+    }
 
     console.log(expense)
 
@@ -65,7 +95,6 @@ const NewExpenseForm = () => {
                     onChange={(date) => setExpense({ ...expense, cardDate: date?.valueOf() })}
                 />
             </div>
-
             {expense.currencyCodeKey && (
                 <div className="receipt-form-fields">
                     <div className="receipt-form-field">
@@ -96,6 +125,14 @@ const NewExpenseForm = () => {
                     </div>
                 </div>
             )}
+            {response && <Alert message={response.message} type={response.type} closable afterClose={() => setResponse(undefined)} />}
+            <div className="action-buttons">
+                <span>Cancelar</span>
+                <span onClick={addNewExpense}>
+                    Salvar
+                   <i className="fas fa-chevron-down"></i>
+                </span>
+            </div>
         </div>
     );
 }

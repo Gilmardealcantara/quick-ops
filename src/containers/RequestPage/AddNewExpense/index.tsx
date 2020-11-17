@@ -21,10 +21,6 @@ const AddNewExpense = () => {
                     <ReceiptAttachment />
                     <NewExpenseForm />
                 </div>
-                <div className="action-buttons">
-                    <span>Cancelar</span>
-                    <span>Salvar</span>
-                </div>
             </div>
         </>
     );

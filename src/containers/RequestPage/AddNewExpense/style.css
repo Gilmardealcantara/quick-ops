@@ -30,31 +30,3 @@
     border-radius: 12px;
     background-color: #fafbfc;
 }
-
-/* action bnuttons */
-.add-new-expense-form  .action-buttons {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    padding: 25px 25px 5px 5px;
-}
-
-.add-new-expense-form  .action-buttons button {
-    margin: 3px;
-}
-
-.add-new-expense-form  .action-buttons span:first-child {
-  padding: 6px 12px;
-  border-radius: 6px;
-  border: solid 1px #6b7480;
-  background-color: #ffffff;
-  color: #6b7480;
-}
-
-.add-new-expense-form  .action-buttons span:last-child {
-  margin: 0 0 0 5px;
-  padding: 6px 12px;
-  border-radius: 6px;
-  background-color: #51c1c3;
-  color: #ffffff
-}
