@@ -24,8 +24,11 @@ interface ApiResponse {
     message: string;
 }
 
-const NewExpenseForm = () => {
-    const [response, setResponse] = useState<ApiResponse>();
+interface Props {
+    closeForm(): void
+}
+
+const NewExpenseForm = ({ closeForm }: Props) => {
     const [loading, setLoading] = useState<boolean>();
     const [currencyCodeKey, setCurrencyCodeKey] = useState<string>();
     const [form] = Form.useForm();
@@ -141,8 +144,8 @@ const NewExpenseForm = () => {
                     </div>
                 )}
                 <div className="action-buttons">
-                    <Button onClick={() => resetForm()} > Cancelar </Button>
-                    <Button type="primary" htmlType="submit"> Salvar </Button>
+                    <Button onClick={() => { resetForm(); closeForm(); }} > Cancelar </Button>
+                    <Button type="primary" htmlType="submit" loading={loading}> {loading ? 'Salvando...' : 'Salvar'} </Button>
                 </div>
             </Form>
         </div>
