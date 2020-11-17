@@ -3,6 +3,7 @@
     display: flex;
     flex-direction: column;
     width: 40%;
+    padding-right: 25px;
 }
 
 .add-new-expense-form .receipt-form-fields {
@@ -29,25 +30,18 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    padding: 25px 25px 5px 5px;
 }
 
 .add-new-expense-form  .action-buttons button {
     margin: 3px;
 }
 
-/* .add-new-expense-form  .action-buttons span:first-child {
-  padding: 6px 12px;
-  border-radius: 6px;
-  border: solid 1px #6b7480;
+.add-new-expense-form  .action-buttons button:first-child {
   background-color: #ffffff;
   color: #6b7480;
 }
 
-.add-new-expense-form  .action-buttons span:last-child {
-  margin: 0 0 0 5px;
-  padding: 6px 12px;
-  border-radius: 6px;
+.add-new-expense-form  .action-buttons button:last-child {
   background-color: #51c1c3;
-  color: #ffffff
-} */
+  border-color: #51c1c3;
+}
