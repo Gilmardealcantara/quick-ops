@@ -1,5 +1,5 @@
+import { TOKEN_STORAGE_KEY } from 'src/utils/constants';
 import HttpErrorHandler from './HttpErrorHandler';
-import { TOKEN_STORAGE_KEY } from '../utils/constants';
 
 export interface FetchApiError {
   statusCode: number;
@@ -29,10 +29,7 @@ export default class FetchAPI {
       Authorization: `Bearer ${localStorage.getItem(TOKEN_STORAGE_KEY)}`,
     });
 
-  private sendRequest = async (
-    uri: string,
-    requestInfo: RequestInit
-  ): Promise<FetchApiResponse> => {
+  private sendRequest = async (uri: string, requestInfo: RequestInit): Promise<FetchApiResponse> => {
     const controller = new AbortController();
 
     // eslint-disable-next-line no-param-reassign

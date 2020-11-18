@@ -2,9 +2,9 @@ import React from 'react';
 import { RouteComponentProps } from 'react-router-dom';
 import { Layout } from 'antd';
 
+import BreadcrumbWrapper from 'src/components/BreadcrumbWrapper';
 import Header from './Header';
 import SideBar from './SideBar';
-import BreadcrumbWrapper from '../../components/BreadcrumbWrapper';
 
 const { Content, Footer } = Layout;
 
@@ -30,9 +30,7 @@ const BasePage = ({ component, routeProps }: Props) => (
             {React.createElement(component, routeProps)}
           </div>
         </Content>
-        <Footer style={{ textAlign: 'center' }}>
-          QuickOps ©2020 Created by Gilmar Alcantara
-        </Footer>
+        <Footer style={{ textAlign: 'center' }}>QuickOps ©2020 Created by Gilmar Alcantara</Footer>
       </Layout>
     </Layout>
   </>

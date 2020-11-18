@@ -2,17 +2,17 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Spin } from 'antd';
 
-import { ApplicationState } from '../../store';
-import { AppStatusState } from '../../store/modules/appStatus/types';
-import { getAppStatus } from '../../store/modules/appStatus/actions';
+import { ApplicationState } from 'src/store';
+import { AppStatusState } from 'src/store/modules/appStatus/types';
+import { getAppStatus } from 'src/store/modules/appStatus/actions';
 
-import useWindowDimensions from '../../hooks/useWindowDimensions';
+import useWindowDimensions from 'src/hooks/useWindowDimensions';
 
+import Error from 'src/components/Error';
 import RequestHeader from './RequestHeader';
 import RequestSideBar from './RequestSideBar';
 import Timeline from './Timeline';
 import AddNewExpense from './AddNewExpense';
-import Error from '../../components/Error';
 
 import './style.css';
 

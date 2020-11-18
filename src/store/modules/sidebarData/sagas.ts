@@ -1,9 +1,8 @@
 /* eslint-disable import/prefer-default-export */
 import { put, call } from 'redux-saga/effects';
-import { API_URL } from '../../../utils/constants';
+import { API_URL } from 'src/utils/constants';
+import FetchAPI, { FetchApiResponse } from 'src/services/FetchApi';
 import { setSideBarData, setSideBarDataError } from './actions';
-
-import FetchAPI, { FetchApiResponse } from '../../../services/FetchApi';
 
 export function* loadSidebarDataFromApi() {
   try {

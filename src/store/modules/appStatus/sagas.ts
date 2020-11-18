@@ -1,6 +1,6 @@
 /* eslint-disable import/prefer-default-export */
 import { put, call } from 'redux-saga/effects';
-import { API_URL } from '../../../utils/constants';
+import { API_URL } from 'src/utils/constants';
 import { setAppStatus } from './actions';
 
 export function* getAppStatusFromApi() {

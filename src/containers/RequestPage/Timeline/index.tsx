@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { ApplicationState } from '../../../store';
+import { ApplicationState } from 'src/store';
 
-import { loadTimeLineData } from '../../../store/modules/timeline/actions';
-import { TimelineState } from '../../../store/modules/timeline/types';
+import { loadTimeLineData } from 'src/store/modules/timeline/actions';
+import { TimelineState } from 'src/store/modules/timeline/types';
 
 import RequestAccountabilityItem from './RequestAccountabilityItem';
 import RequestEvaluationItem from './RequestEvaluationItem';

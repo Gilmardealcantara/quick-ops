@@ -1,29 +1,15 @@
 import React, { useState } from 'react';
 import { Layout, Menu } from 'antd';
-import {
-  DesktopOutlined,
-  PieChartOutlined,
-  LeftOutlined,
-} from '@ant-design/icons';
+import { DesktopOutlined, PieChartOutlined, LeftOutlined } from '@ant-design/icons';
 
-import history from '../../../routes/history';
+import history from 'src/routes/history';
 
 const SideBar = () => {
   const [collapsed, setCollapsed] = useState(true);
 
   return (
-    <Layout.Sider
-      style={{ backgroundColor: '#053d4e' }}
-      collapsible
-      collapsed={collapsed}
-      trigger={null}
-    >
-      <Menu
-        theme='dark'
-        defaultSelectedKeys={['1']}
-        mode='inline'
-        style={{ backgroundColor: '#053d4e' }}
-      >
+    <Layout.Sider style={{ backgroundColor: '#053d4e' }} collapsible collapsed={collapsed} trigger={null}>
+      <Menu theme='dark' defaultSelectedKeys={['1']} mode='inline' style={{ backgroundColor: '#053d4e' }}>
         <Menu.Item
           style={{ backgroundColor: '#053d4e' }}
           icon={<LeftOutlined key='1' />}

@@ -1,15 +1,10 @@
 import React from 'react';
-import {
-  Route,
-  Redirect,
-  RouteProps,
-  RouteComponentProps,
-} from 'react-router-dom';
-import { TOKEN_STORAGE_KEY } from '../utils/constants';
-import BasePage from '../containers/Base';
+// eslint-disable-next-line object-curly-newline
+import { Route, Redirect, RouteProps, RouteComponentProps } from 'react-router-dom';
+import { TOKEN_STORAGE_KEY } from 'src/utils/constants';
+import BasePage from 'src/containers/Base';
 
-export const isAuthenticated = (): boolean =>
-  localStorage.getItem(TOKEN_STORAGE_KEY) === null;
+export const isAuthenticated = (): boolean => localStorage.getItem(TOKEN_STORAGE_KEY) === null;
 
 const PrivateRoute = ({ component, ...rest }: RouteProps) => {
   if (!component) {
