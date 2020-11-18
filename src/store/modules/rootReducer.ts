@@ -7,10 +7,10 @@ import timeline from './timeline';
 import sidebarData from './sidebarData';
 
 export default (history: History<any>) =>
-    combineReducers({
-        router: connectRouter(history),
-        appStatus,
-        headerData,
-        timeline,
-        sidebarData
-    });
+  combineReducers({
+    router: connectRouter(history),
+    appStatus,
+    headerData,
+    timeline,
+    sidebarData,
+  });

@@ -10,13 +10,12 @@ import { HeaderDataState } from './modules/headerData/types';
 import { TimelineState } from './modules/timeline/types';
 import { SideBarDataState } from './modules/sidebarData/types';
 
-
 export interface ApplicationState {
-    router: RouterState;
-    appStatus: AppStatusState;
-    headerData: HeaderDataState;
-    timeline: TimelineState;
-    sidebarData: SideBarDataState;
+  router: RouterState;
+  appStatus: AppStatusState;
+  headerData: HeaderDataState;
+  timeline: TimelineState;
+  sidebarData: SideBarDataState;
 }
 
 const sagaMiddleware = createSagaMiddleware();
@@ -24,8 +23,8 @@ const sagaMiddleware = createSagaMiddleware();
 const middlewares = [sagaMiddleware, routerMiddleware(history)];
 
 const store: Store<ApplicationState> = createStore(
-    rootReducer(history),
-    applyMiddleware(...middlewares)
+  rootReducer(history),
+  applyMiddleware(...middlewares)
 );
 
 sagaMiddleware.run(rootSaga);

@@ -1,7 +1,7 @@
 {
     "env": {
         "browser": true,
-        "es2021": true,
+        "es2020": true,
         "jest": true
     },
     "extends": [
@@ -34,8 +34,11 @@
         "import/no-unresolved": "off",
         "jsx-quotes": ["error", "prefer-single"],
         "import/extensions": "off",
-        "implicit-arrow-linebreak": "off", // prettier conflit
+        "implicit-arrow-linebreak": "off", // prettier conflict
         "@typescript-eslint/explicit-module-boundary-types": "off",
-        "react/jsx-props-no-spreading": "off"
+        "react/jsx-props-no-spreading": "off",
+        "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
+        "comma-dangle": "off", // prettier conflict
+        "no-shadow": "off"
     }
 }

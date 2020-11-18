@@ -2,15 +2,16 @@ import React from 'react';
 import { Layout } from 'antd';
 
 const Header = () => (
-    <Layout.Header style={{
-            paddingTop: "10px",
-            paddingRight: "15px",
-            paddingBottom: "9px",
-            paddingLeft: "21px",
-            height: '48px',
-            backgroundColor: "#053d4e"
-        }}
-    />
+  <Layout.Header
+    style={{
+      paddingTop: '10px',
+      paddingRight: '15px',
+      paddingBottom: '9px',
+      paddingLeft: '21px',
+      height: '48px',
+      backgroundColor: '#053d4e',
+    }}
+  />
 );
 
 export default Header;

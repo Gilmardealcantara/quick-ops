@@ -3,7 +3,7 @@
  */
 export enum AppStatusTypes {
   GET = '@AppStatus/GET',
-  SET = '@AppStatus/SET'
+  SET = '@AppStatus/SET',
 }
 
 /**
