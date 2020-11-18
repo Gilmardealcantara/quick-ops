@@ -9,4 +9,5 @@ const App: React.FC = () => (
     <Router />
   </Provider>
 );
+
 export default App;
