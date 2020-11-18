@@ -4,4 +4,5 @@ import { TimelineTypes, TimelineItem } from './types';
 export const loadTimeLineData = () => action(TimelineTypes.LOAD);
 export const setTimelineData = (data: TimelineItem[]) => action(TimelineTypes.SET_DATA, data);
 export const setTimelineError = (status: string) => action(TimelineTypes.SET_ERROR, status);
+export const addNewExpense = (data: TimelineItem) => action(TimelineTypes.ADD_EXPENSE, data);
 

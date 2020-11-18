@@ -1,15 +1,21 @@
 import React, { useState } from 'react';
-import { Alert, Button, DatePicker, Form, Input, InputNumber, notification, Select } from 'antd';
-import { SmileOutlined } from '@ant-design/icons';
+import { useDispatch } from 'react-redux';
+import { Button, DatePicker, Form, Input, InputNumber, notification, Select } from 'antd';
 
 import { expenseTypesOptions, currencyOptions, currencyFormatter, currencyParser } from './FormHelper';
 
 import './style.css';
 import { API_URL } from '../../../../utils/constants';
 import FetchAPI from '../../../../services/FetchApi';
+import { addNewExpense } from '../../../../store/modules/timeline/actions';
 
 
-interface Expense {
+interface ApiResponse {
+    type: "error" | "success" | "warning";
+    message: string;
+}
+
+export interface Expense {
     expenseTypeCode?: string;
     currencyCode?: string;
     amountSpent?: number;
@@ -19,16 +25,12 @@ interface Expense {
     cardDate?: number;
 }
 
-interface ApiResponse {
-    type: "error" | "success" | "warning";
-    message: string;
-}
-
 interface Props {
     closeForm(): void
 }
 
 const NewExpenseForm = ({ closeForm }: Props) => {
+    const dispatch = useDispatch();
     const [loading, setLoading] = useState<boolean>();
     const [currencyCodeKey, setCurrencyCodeKey] = useState<string>();
     const [form] = Form.useForm();
@@ -45,15 +47,16 @@ const NewExpenseForm = ({ closeForm }: Props) => {
         setCurrencyCodeKey(undefined);
     }
 
-    const addNewExpense = async (expense: Expense) => {
+    const saveNewExpense = async (expense: Expense) => {
 
         const fetchApi = new FetchAPI(API_URL);
         setLoading(true);
-        const { data, error } = await fetchApi.post("/expense/add", expense);
+        const { error, data } = await fetchApi.post("/expense/add", expense);
         setLoading(false);
         if (!error) {
             openNotification({ message: "Despesa adicionda com sucesso", type: "success" })
-            resetForm();
+            // resetForm();
+            dispatch(addNewExpense({ ...data, currencySymbol: data.currencyCode }));
         } else {
             openNotification({ message: "Falha ao salvar dados, tente novamente mais tarde", type: "error" })
         }
@@ -71,7 +74,7 @@ const NewExpenseForm = ({ closeForm }: Props) => {
             resourceUrl: values.resourceUrl,
             cardDate: values.cardDate.valueOf(),
         }
-        addNewExpense(payload);
+        saveNewExpense(payload);
     };
 
 

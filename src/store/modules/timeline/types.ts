@@ -3,13 +3,15 @@
  */
 export enum TimelineTypes {
     LOAD = '@Timeline/LOAD',
+    ADD_EXPENSE = '@Timeline/ADD_EXPENSE',
     SET_DATA = '@Timeline/SET_DATA',
-    SET_ERROR = '@Timeline/SET_DATA'
+    SET_ERROR = '@Timeline/SET_ERROR'
 }
 
 /**
  * Data type
  */
+
 export interface TimelineItem {
     id: number,
     cardDate: number,

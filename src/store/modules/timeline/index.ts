@@ -14,6 +14,8 @@ const reducer: Reducer<TimelineState> = (state = INITIAL_STATE, action) => {
             return { ...state, loading: false, error: undefined, data: action.payload };
         case TimelineTypes.SET_ERROR:
             return { ...state, loading: false, error: { status: action.payload }, data: [] };
+        case TimelineTypes.ADD_EXPENSE:
+            return { ...state, data: [action.payload, ...state.data] };
         default:
             return state;
     }
