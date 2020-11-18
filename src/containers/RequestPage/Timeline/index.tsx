@@ -9,28 +9,35 @@ import RequestAccountabilityItem from './RequestAccountabilityItem';
 import RequestEvaluationItem from './RequestEvaluationItem';
 import RequestExpenseItem from './RequestExpenseItem';
 
-import './style.css'
+import './style.css';
 
 const Timeline = () => {
-    const dispatch = useDispatch();
-    const { data } = useSelector<ApplicationState, TimelineState>(state => state.timeline);
+  const dispatch = useDispatch();
+  const { data } = useSelector<ApplicationState, TimelineState>((state) => state.timeline);
 
-    useEffect(() => {
-        dispatch(loadTimeLineData());
-    }, [])
+  useEffect(() => {
+    dispatch(loadTimeLineData());
+  }, []);
 
-    return (
-        <div className="request-list">
-            {data.map(timelineItem => {
-                if (timelineItem.cardType == "ACCOUNTABILITY_CREATED" || timelineItem.cardType == "ACCOUNTABILITY_SUBMITTED")
-                    return <RequestAccountabilityItem key={timelineItem.id} item={timelineItem} />
-                if (timelineItem.cardType == "EVALUATION")
-                    return <RequestEvaluationItem key={timelineItem.id} item={timelineItem} />
-                if (timelineItem.cardType == "EXPENSE")
-                    return <RequestExpenseItem key={timelineItem.id} item={timelineItem} />
-            })}
-        </div>
-    );
-}
+  return (
+    <div className='request-list'>
+      {data.map((timelineItem) => {
+        if (
+          timelineItem.cardType === 'ACCOUNTABILITY_CREATED' ||
+          timelineItem.cardType === 'ACCOUNTABILITY_SUBMITTED'
+        ) {
+          return <RequestAccountabilityItem key={timelineItem.id} item={timelineItem} />;
+        }
+        if (timelineItem.cardType === 'EVALUATION') {
+          return <RequestEvaluationItem key={timelineItem.id} item={timelineItem} />;
+        }
+        if (timelineItem.cardType === 'EXPENSE') {
+          return <RequestExpenseItem key={timelineItem.id} item={timelineItem} />;
+        }
+        return null;
+      })}
+    </div>
+  );
+};
 
 export default Timeline;

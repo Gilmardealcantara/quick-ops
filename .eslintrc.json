@@ -39,6 +39,7 @@
         "react/jsx-props-no-spreading": "off",
         "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
         "comma-dangle": "off", // prettier conflict
-        "no-shadow": "off"
+        "no-shadow": "off",
+        "operator-linebreak": "off"
     }
 }

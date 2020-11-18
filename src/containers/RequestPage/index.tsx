@@ -4,7 +4,7 @@ import { Spin } from 'antd';
 
 import { ApplicationState } from '../../store';
 import { AppStatusState } from '../../store/modules/appStatus/types';
-import { getAppStatus } from '../../store/modules/appStatus/actions'
+import { getAppStatus } from '../../store/modules/appStatus/actions';
 
 import useWindowDimensions from '../../hooks/useWindowDimensions';
 
@@ -16,44 +16,29 @@ import Error from '../../components/Error';
 
 import './style.css';
 
-
-
 const RequestPage = () => {
-    const dipatch = useDispatch();
-    const dimensions = useWindowDimensions();
-    const { loading, ok } = useSelector<ApplicationState, AppStatusState>((state) => state.appStatus);
+  const dipatch = useDispatch();
+  const dimensions = useWindowDimensions();
+  const { loading, ok } = useSelector<ApplicationState, AppStatusState>((state) => state.appStatus);
 
-    useEffect(() => { dipatch(getAppStatus()); }, []);
+  useEffect(() => {
+    dipatch(getAppStatus());
+  }, []);
 
-    if (ok != undefined && ok == false) return <Error />
+  if (ok !== undefined && ok === false) return <Error />;
 
-    const bigScreenLayout = () => (
-        <div className="request-page">
-            <div style={{ width: '100%' }}>
-                <RequestHeader />
-                <AddNewExpense />
-                <Timeline />
-            </div>
-            {dimensions.width > 1250 && <RequestSideBar />}
+  return (
+    <Spin spinning={loading} size='large'>
+      <div className='request-page'>
+        <div style={{ width: '100%' }}>
+          <RequestHeader />
+          <AddNewExpense />
+          <Timeline />
         </div>
-    )
-
-    const smallScreenLayout = () => (
-        <div className="request-page">
-            <div style={{ width: '100%' }}>
-                <RequestHeader />
-                <AddNewExpense />
-                <RequestSideBar />
-                <Timeline />
-            </div>
-        </div>
-    )
-
-    return (
-        <Spin spinning={loading} size="large">
-            {bigScreenLayout()}
-        </Spin>
-    )
+        {dimensions.width > 1250 && <RequestSideBar />}
+      </div>
+    </Spin>
+  );
 };
 
 export default RequestPage;
