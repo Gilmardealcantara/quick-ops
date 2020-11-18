@@ -1,9 +1,8 @@
 .request-header-assign-analyst {
     display: flex;
-    flex: 2;
+    flex: 1;
     flex-direction: column;
     justify-content: center;
-    width: '100vw';
 }
 
 .request-header-assign-analyst-title {

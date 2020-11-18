@@ -1,3 +1,51 @@
 .request-list {
-    margin: 24px 0px 0px 24px;
+    margin: 24px 24px 0px 24px;
+}
+
+
+@media screen and (max-width: 900px) {
+    .request-list .expense-request-item, .accountability-request-item, .evaluation-request-item {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+    }
+
+    .request-list .expense-request-item div:nth-child(1) {
+        align-items: center;
+        justify-content: center;
+    }
+
+    .request-list .expense-request-item div:nth-child(2) {
+        margin: 10px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .request-list .expense-request-item div:nth-child(3) {
+        margin: 10px;
+    }
+
+    .request-list .expense-request-item div:nth-child(4) {
+        margin: 10px;
+        width: 100%;
+    }
+
+    .request-list .evaluation-request-item div:nth-child(2) {
+        margin: 10px;
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+    }
+
+    .request-list .evaluation-request-item div:nth-child(3) {
+        margin: 10px;
+    }
+
+    .request-list .evaluation-request-item div:nth-child(4) {
+        margin: 10px;
+        width: 100%;
+    }
 }

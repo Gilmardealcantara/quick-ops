@@ -39,7 +39,7 @@ const RequestHeader = () => {
             ) : (
                     <>
                         <span className="request-reader-title">{data.title}</span>
-                        <div style={{ display: "flex" }}>
+                        <div className="request-reader-body">
                             <div className={"request-header-key-value-list"}>
                                 <KeyValue name={"Nome"} value={data.collaborator.name} />
                                 <KeyValue name={"Email"} value={data.collaborator.email} />
@@ -51,7 +51,7 @@ const RequestHeader = () => {
                                 <KeyValue name={"Incluir Café da Manhã"} value={formatHasBreakfast(data.accountabilityExtraInfo.budgetForBreakfast)} />
                             </div>
                             <span className="request-header-divider"></span>
-                            <AssignAnalyst costCenters={data.costCenters} />
+                            <AssignAnalyst />
                         </div>
                     </>
                 )}

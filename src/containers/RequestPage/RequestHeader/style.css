@@ -1,9 +1,28 @@
+
 .request-reader-container {
-    margin: 24px 0px 0px 24px;
-    padding: 14px 12px 18px 43px;
+    margin: 24px 24px 0px 24px;
+    padding: 14px 30px 14px 30px;
     border-radius: 12px;
     background-image: linear-gradient(to right, #00d7ce 3%, #00c5fc);
+    width: '70%';
 }
+
+.request-reader-body {
+    display: flex;
+}
+
+@media screen and (max-width: 950px) {
+    .request-reader-body {
+        display: flex;
+        flex-direction: column;  
+    }
+
+    .request-header-divider {
+        width: 90%;
+        border: solid 1px #fafbfc;
+    }
+}
+
 
 .request-reader-title {
     width: 280px;
@@ -18,3 +37,4 @@
     letter-spacing: normal;
     color: #ffffff;
 }
+

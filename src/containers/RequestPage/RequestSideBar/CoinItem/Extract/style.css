@@ -6,6 +6,7 @@
     line-height: 1.5;
     color: #353a40;
     align-self: flex-start;
+    padding-left: 10px;
 }
 
 .request-side-bar-coin .extract-divider {
@@ -17,6 +18,7 @@
     display: flex;
     flex-direction: column;
     width: 100%;
+    padding-left: 10px;
 }
 
 .request-side-bar-coin .extract-table div {
@@ -26,7 +28,7 @@
 }
 
 .request-side-bar-coin .extract-table div span:first-child {
-   width: 50%;
+   width: 60%;
 }
 
 .request-side-bar-coin .extract-table .extract-table-row span:first-child {
