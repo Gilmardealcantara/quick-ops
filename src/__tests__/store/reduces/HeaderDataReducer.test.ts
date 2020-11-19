@@ -1,4 +1,4 @@
-import { mock, MockProxy } from 'jest-mock-extended';
+import { mock } from 'jest-mock-extended';
 import headerData from '../../../store/modules/headerData';
 import { loadHeaderData, setHeaderData, setHeaderDataError } from '../../../store/modules/headerData/actions';
 import { HeaderData } from '../../../store/modules/headerData/types';
