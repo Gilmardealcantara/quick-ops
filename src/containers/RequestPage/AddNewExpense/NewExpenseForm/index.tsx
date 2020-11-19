@@ -51,8 +51,8 @@ const NewExpenseForm = ({ closeForm }: Props) => {
     setLoading(false);
     if (!error) {
       openNotification({ message: 'Despesa adicionda com sucesso', type: 'success' });
-      // resetForm();
       dispatch(addNewExpense({ ...data, currencySymbol: data.currencyCode }));
+      resetForm();
     } else {
       openNotification({ message: 'Falha ao salvar dados, tente novamente mais tarde', type: 'error' });
     }
@@ -72,13 +72,13 @@ const NewExpenseForm = ({ closeForm }: Props) => {
     saveNewExpense(payload);
   };
   return (
-    <div className='receipt-form-container'>
+    <div data-testid='new-enxpense-form' className='receipt-form-container'>
       <Form form={form} onFinish={onFinish}>
         <div className='receipt-form-fields'>
           <div className='receipt-form-field'>
             <span>Tipo *</span>
             <Form.Item name='expenseTypeCode' rules={[{ required: true, message: 'Obrigatório' }]}>
-              <Select placeholder='Tipo'>
+              <Select data-testid='form-select-expenseTypeCode' placeholder='Tipo'>
                 {expenseTypesOptions.map((op) => (
                   <Select.Option key={op.value} value={op.value}>
                     {op.label}
@@ -91,6 +91,7 @@ const NewExpenseForm = ({ closeForm }: Props) => {
             <span>Moeda *</span>
             <Form.Item name='currencyCodeKey' rules={[{ required: true, message: 'Obrigatório' }]}>
               <Select
+                data-testid='form-select-currencyCodeKey'
                 placeholder='Moeda'
                 onChange={(value: string) => {
                   setCurrencyCodeKey(value);
@@ -108,13 +109,18 @@ const NewExpenseForm = ({ closeForm }: Props) => {
         <div className='receipt-form-field'>
           <span>Descrição da despesa</span>
           <Form.Item name='notes' rules={[{ required: true, message: 'Obrigatório' }]}>
-            <Input style={{ width: '48%' }} placeholder='Descrição da despesa' />
+            <Input data-testid='form-intput-notes' style={{ width: '48%' }} placeholder='Descrição da despesa' />
           </Form.Item>
         </div>
         <div className='receipt-form-field'>
           <span>Data do comprovante</span>
           <Form.Item name='cardDate' rules={[{ required: true, message: 'Obrigatório' }]}>
-            <DatePicker placeholder='Selecione uma data' style={{ width: '48%' }} format='DD/MM/YYYY' />
+            <DatePicker
+              data-testid='form-datepicker-cardDate'
+              placeholder='Selecione uma data'
+              style={{ width: '48%' }}
+              format='DD/MM/YYYY'
+            />
           </Form.Item>
         </div>
         {currencyCodeKey && (
@@ -123,6 +129,7 @@ const NewExpenseForm = ({ closeForm }: Props) => {
               <span>Valor total da nota/cupom</span>
               <Form.Item name='amountTotal' rules={[{ required: true, message: 'Deve conter um valor acima de zero' }]}>
                 <InputNumber
+                  data-testid='form-input-amountTotal'
                   defaultValue={0}
                   style={{
                     width: '100%',
@@ -137,6 +144,7 @@ const NewExpenseForm = ({ closeForm }: Props) => {
               <span>Valor a ser considerado</span>
               <Form.Item name='amountSpent' rules={[{ required: true, message: 'Deve conter um valor acima de zero' }]}>
                 <InputNumber
+                  data-testid='form-input-amountSpent'
                   defaultValue={0}
                   style={{
                     width: '100%',
@@ -159,7 +167,7 @@ const NewExpenseForm = ({ closeForm }: Props) => {
             {' '}
             Cancelar{' '}
           </Button>
-          <Button type='primary' htmlType='submit' loading={loading}>
+          <Button data-testid='submit-form-button' type='primary' htmlType='submit' loading={loading}>
             {' '}
             {loading ? 'Salvando...' : 'Salvar'}{' '}
           </Button>
