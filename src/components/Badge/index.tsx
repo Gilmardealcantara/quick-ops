@@ -5,7 +5,7 @@ interface Props {
   status: string;
 }
 const Badge = ({ status }: Props) => (
-  <div className='expense-request-item-status-badge-ok'>
+  <div className={`expense-request-item-status-badge expense-request-item-status-badge-${status}`}>
     <span>{status}</span>
   </div>
 );

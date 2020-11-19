@@ -2,6 +2,7 @@ import React, { memo } from 'react';
 import { format } from 'date-fns';
 import { TimelineItem } from 'src/store/modules/timeline/types';
 import './style.css';
+import Badge from 'src/components/Badge';
 
 interface Props {
   item: TimelineItem;
@@ -24,9 +25,7 @@ const RequestEvaluationItem = ({ item }: Props) => {
       </div>
       <div className='evaluation-request-item-status'>
         <span className='evaluation-request-item-type-title'>STATUS</span>
-        <div className='evaluation-request-item-status-badge'>
-          <span>{item.status}</span>
-        </div>
+        <Badge status={item.status} />
       </div>
       <div className='evaluation-request-item-see-approval'>
         <span>Ver Aprovações</span>

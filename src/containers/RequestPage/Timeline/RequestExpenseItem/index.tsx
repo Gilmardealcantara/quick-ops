@@ -46,9 +46,7 @@ const RequestExpenseItem = ({ item }: Props) => {
         <Badge status={item.status} />
         {item.expenseEvaluation && (
           <>
-            <div className='expense-request-item-status-badge-default'>
-              <span>Dedutivel</span>
-            </div>
+            <Badge status={item.status} />
             <span className='expense-request-item-desc'>Valor aprovado: RS 111112,22</span>
           </>
         )}

@@ -1,21 +1,48 @@
 
 /* badges */
-.expense-request-item-status-badge-ok {
+
+.expense-request-item-status-badge {
   width: 79px;
   height: 24px;
   margin: 3px 0 0;
   padding: 6px 12px;
   border-radius: 18px;
-  border: solid 1px #03a046;
-  background-color: #e6fff0;
   display: flex;
 }
-.expense-request-item-status-badge-ok span {
+
+.expense-request-item-status-badge span {
   width: 55px;
   height: 12px;
   font-size: 12px;
   font-weight: bold;
   line-height: 1;
   letter-spacing: normal;
+}
+
+.expense-request-item-status-badge-OK {
+  border: solid 1px #03a046;
+  background-color: #e6fff0;
+}
+
+.expense-request-item-status-badge-OK span {
   color: #03a046;
+}
+
+
+.expense-request-item-status-badge-CANCEL {
+  border: solid 1px #e7122e;
+  background-color: #eec6cf;
+}
+.expense-request-item-status-badge-CANCEL span {
+  letter-spacing: normal;
+  color: #e7122e;
+}
+
+
+.expense-request-item-status-badge-PENDING {
+  border: solid 1px #545b64;
+  background-color: #f0f3f7;
+}
+.expense-request-item-status-badge-PENDING span {
+  color: #545b64;
 }

@@ -53,7 +53,7 @@
   height: 16px;
   font-size: 12px;
   font-weight: bold;
-  color: #d0d3d6;  
+  color: #d0d3d6;
 }
 
 .evaluation-request-item-type-content{
@@ -62,7 +62,7 @@
     font-weight: bold;
     line-height: normal;
     letter-spacing: normal;
-    color: #545b64; 
+    color: #545b64;
   }
 
 .evaluation-request-item-status {
@@ -72,25 +72,6 @@
     flex-direction: column;
 }
 
-.evaluation-request-item-status-badge {
-    width: 79px;
-    height: 24px;
-    margin: 3px 0 0;
-    padding: 6px 12px;
-    border-radius: 18px;
-    border: solid 1px #03a046;
-    background-color: #e6fff0;
-    display: flex;
-}
-.evaluation-request-item-status-badge span {
-    width: 55px;
-    height: 12px;
-    font-size: 12px;
-    font-weight: bold;
-    line-height: 1;
-    letter-spacing: normal;
-    color: #03a046;
-}
 
 .evaluation-request-item-see-approval {
     height: 50px;
