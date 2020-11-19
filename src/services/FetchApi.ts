@@ -8,9 +8,10 @@ export interface FetchApiError {
 }
 
 export interface FetchApiResponse {
+  success: boolean;
   data?: any;
   error?: FetchApiError;
-  controller: AbortController;
+  controller?: AbortController;
 }
 
 class FetchAPI {
@@ -32,14 +33,16 @@ class FetchAPI {
     try {
       const response = await fetch(uri, requestInfo);
       if (response.ok) {
-        return {
-          data: await response.json(),
-          controller,
-        };
+        try {
+          return { success: true, data: await response.json(), controller };
+        } catch (error) {
+          return { success: true, controller };
+        }
       }
       return HttpErrorHandler.getFetchApiResponse(response, controller);
     } catch (error) {
       return {
+        success: false,
         controller,
         error: {
           statusCode: -1,

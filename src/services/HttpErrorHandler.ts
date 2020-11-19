@@ -1,13 +1,11 @@
 import { FetchApiResponse } from './FetchApi';
 
 class HttpErrorHandler {
-  public static getFetchApiResponse(
-    response: Response,
-    controller: AbortController
-  ): FetchApiResponse {
+  public static getFetchApiResponse(response: Response, controller: AbortController): FetchApiResponse {
+    const resp = { controller, success: false };
     if (response.status === 401) {
       return {
-        controller,
+        ...resp,
         error: {
           statusCode: response.status,
           statusText: response.statusText,
@@ -18,7 +16,7 @@ class HttpErrorHandler {
 
     if (response.status === 400) {
       return {
-        controller,
+        ...resp,
         error: {
           statusCode: response.status,
           statusText: response.statusText,
@@ -29,7 +27,7 @@ class HttpErrorHandler {
 
     if (response.status === 500) {
       return {
-        controller,
+        ...resp,
         error: {
           statusCode: response.status,
           statusText: response.statusText,
@@ -39,7 +37,7 @@ class HttpErrorHandler {
     }
 
     return {
-      controller,
+      ...resp,
       error: {
         statusCode: response.status,
         statusText: response.statusText,
@@ -48,13 +46,12 @@ class HttpErrorHandler {
     };
   }
 
-  private static errorHandler(
-    response: Response,
-    controller: AbortController
-  ): FetchApiResponse {
+  private static errorHandler(response: Response, controller: AbortController): FetchApiResponse {
+    const resp = { controller, success: false };
+
     if (response.status === 401) {
       return {
-        controller,
+        ...resp,
         error: {
           statusCode: response.status,
           statusText: response.statusText,
@@ -65,7 +62,7 @@ class HttpErrorHandler {
 
     if (response.status === 400) {
       return {
-        controller,
+        ...resp,
         error: {
           statusCode: response.status,
           statusText: response.statusText,
@@ -76,7 +73,7 @@ class HttpErrorHandler {
 
     if (response.status === 500) {
       return {
-        controller,
+        ...resp,
         error: {
           statusCode: response.status,
           statusText: response.statusText,
@@ -86,7 +83,7 @@ class HttpErrorHandler {
     }
 
     return {
-      controller,
+      ...resp,
       error: {
         statusCode: response.status,
         statusText: response.statusText,
