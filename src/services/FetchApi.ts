@@ -1,4 +1,4 @@
-import { TOKEN_STORAGE_KEY } from 'src/utils/constants';
+import { TOKEN_STORAGE_KEY, API_URL } from 'src/utils/constants';
 import HttpErrorHandler from './HttpErrorHandler';
 
 export interface FetchApiError {
@@ -13,23 +13,17 @@ export interface FetchApiResponse {
   controller: AbortController;
 }
 
-export default class FetchAPI {
-  private baseURI: string;
+class FetchAPI {
+  private static formatURL = (resource: string) => API_URL + resource;
 
-  constructor(baseURI: string) {
-    this.baseURI = baseURI;
-  }
-
-  private formatURL = (resource: string) => this.baseURI + resource;
-
-  private getHeaders = () =>
+  private static getHeaders = () =>
     new Headers({
       Accept: 'application/json',
       'Content-Type': 'application/json',
       Authorization: `Bearer ${localStorage.getItem(TOKEN_STORAGE_KEY)}`,
     });
 
-  private sendRequest = async (uri: string, requestInfo: RequestInit): Promise<FetchApiResponse> => {
+  private static sendRequest = async (uri: string, requestInfo: RequestInit): Promise<FetchApiResponse> => {
     const controller = new AbortController();
 
     // eslint-disable-next-line no-param-reassign
@@ -56,41 +50,43 @@ export default class FetchAPI {
     }
   };
 
-  async get(resource: string): Promise<FetchApiResponse> {
-    const uri = this.formatURL(resource);
+  static get(resource: string): Promise<FetchApiResponse> {
+    const uri = FetchAPI.formatURL(resource);
     const requestInfo = {
-      headers: this.getHeaders(),
+      headers: FetchAPI.getHeaders(),
     };
-    return this.sendRequest(uri, requestInfo);
+    return FetchAPI.sendRequest(uri, requestInfo);
   }
 
-  post(resource: string, data: any): Promise<FetchApiResponse> {
-    const uri = this.formatURL(resource);
+  static post(resource: string, data: any): Promise<FetchApiResponse> {
+    const uri = FetchAPI.formatURL(resource);
     const requestInfo = {
       method: 'POST',
       body: JSON.stringify(data),
-      headers: this.getHeaders(),
+      headers: FetchAPI.getHeaders(),
     };
-    return this.sendRequest(uri, requestInfo);
+    return FetchAPI.sendRequest(uri, requestInfo);
   }
 
-  update(resource: string, data: any): Promise<FetchApiResponse> {
-    const uri = this.formatURL(resource);
+  static update(resource: string, data: any): Promise<FetchApiResponse> {
+    const uri = FetchAPI.formatURL(resource);
     const requestInfo = {
       method: 'PUT',
       body: JSON.stringify(data),
-      headers: this.getHeaders(),
+      headers: FetchAPI.getHeaders(),
     };
-    return this.sendRequest(uri, requestInfo);
+    return FetchAPI.sendRequest(uri, requestInfo);
   }
 
-  delete(resource: string, resourceId: any): Promise<FetchApiResponse> {
-    let uri = this.formatURL(resource);
+  static delete(resource: string, resourceId: any): Promise<FetchApiResponse> {
+    let uri = FetchAPI.formatURL(resource);
     uri = `${uri}/${resourceId}`;
     const requestInfo = {
       method: 'DELETE',
-      headers: this.getHeaders(),
+      headers: FetchAPI.getHeaders(),
     };
-    return this.sendRequest(uri, requestInfo);
+    return FetchAPI.sendRequest(uri, requestInfo);
   }
 }
+
+export default FetchAPI;

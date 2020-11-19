@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Button, DatePicker, Form, Input, InputNumber, notification, Select } from 'antd';
 
-import { API_URL } from 'src/utils/constants';
 import FetchAPI from 'src/services/FetchApi';
 import { addNewExpense } from 'src/store/modules/timeline/actions';
 
@@ -47,9 +46,8 @@ const NewExpenseForm = ({ closeForm }: Props) => {
   };
 
   const saveNewExpense = async (expense: Expense) => {
-    const fetchApi = new FetchAPI(API_URL);
     setLoading(true);
-    const { error, data } = await fetchApi.post('/expense/add', expense);
+    const { error, data } = await FetchAPI.post('/expense/add', expense);
     setLoading(false);
     if (!error) {
       openNotification({ message: 'Despesa adicionda com sucesso', type: 'success' });
