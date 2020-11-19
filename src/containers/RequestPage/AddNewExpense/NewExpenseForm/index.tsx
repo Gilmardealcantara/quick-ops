@@ -4,6 +4,7 @@ import { Button, DatePicker, Form, Input, InputNumber, notification, Select } fr
 
 import FetchAPI from 'src/services/FetchApi';
 import { addNewExpense } from 'src/store/modules/timeline/actions';
+import { setReadStatus } from 'src/store/modules/appStatus/actions';
 
 import { expenseTypesOptions, currencyOptions, currencyFormatter, currencyParser } from './FormHelper';
 import './style.css';
@@ -23,11 +24,7 @@ export interface Expense {
   cardDate?: number;
 }
 
-interface Props {
-  closeForm(): void;
-}
-
-const NewExpenseForm = ({ closeForm }: Props) => {
+const NewExpenseForm = () => {
   const dispatch = useDispatch();
   const [loading, setLoading] = useState<boolean>();
   const [currencyCodeKey, setCurrencyCodeKey] = useState<string>();
@@ -59,7 +56,6 @@ const NewExpenseForm = ({ closeForm }: Props) => {
   };
 
   const onFinish = (values: any) => {
-    console.log('Success:', values);
     const payload = {
       expenseTypeCode: values.expenseTypeCode,
       currencyCode: values.currencyCodeKey.split('::')[1],
@@ -161,15 +157,13 @@ const NewExpenseForm = ({ closeForm }: Props) => {
           <Button
             onClick={() => {
               resetForm();
-              closeForm();
+              dispatch(setReadStatus());
             }}
           >
-            {' '}
-            Cancelar{' '}
+            Cancelar
           </Button>
           <Button data-testid='submit-form-button' type='primary' htmlType='submit' loading={loading}>
-            {' '}
-            {loading ? 'Salvando...' : 'Salvar'}{' '}
+            {loading ? 'Salvando...' : 'Salvar'}
           </Button>
         </div>
       </Form>

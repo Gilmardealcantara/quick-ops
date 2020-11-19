@@ -9,24 +9,47 @@
     height: 86px;
     margin: 0px 0px 20px 15px;
     border-radius: 6px;
-    border: solid 1px #009d43;
-    background-color: #edfff5;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+
+.request-side-bar-status-card-0 {
+  border: solid 1px #009d43;
+  background-color: #edfff5;
+}
+
+.request-side-bar-status-card-1 {
+  border: solid 1px #6b7480;
+  background-color: #f0f3f7;
+}
+
 
 .request-side-bar-status-card-title {
     margin: 10px  0px 0px 0px;
     font-size: 16px;
     line-height: 1.5;
     text-align: center;
-    color: #006e2f;
 }
 
 .request-side-bar-status-card-desc {
     font-size: 24px;
     font-weight: bold;
     text-align: center;
-    color: #009d43;
+}
+
+.request-side-bar-status-card-0 .request-side-bar-status-card-title {
+  color: #006e2f;
+}
+
+.request-side-bar-status-card-0 .request-side-bar-status-card-desc {
+  color: #009d43;
+}
+
+.request-side-bar-status-card-1 .request-side-bar-status-card-title {
+  color: #053d4e;
+}
+
+.request-side-bar-status-card-1 .request-side-bar-status-card-desc {
+  color: #053d4e;
 }
