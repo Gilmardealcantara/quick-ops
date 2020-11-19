@@ -17,7 +17,7 @@ const Timeline = () => {
 
   useEffect(() => {
     dispatch(loadTimeLineData());
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className='request-list'>

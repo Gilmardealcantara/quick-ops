@@ -24,7 +24,7 @@ const RequestSideBar = () => {
 
   useEffect(() => {
     dispatch(loadSideBarData());
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className='request-side-bar'>

@@ -18,7 +18,7 @@ const RequestHeader = () => {
 
   useEffect(() => {
     dispatch(loadHeaderData());
-  }, []);
+  }, [dispatch]);
 
   const formatDate = (dateInt: number) => format(new Date(dateInt), 'dd/MM/yyyy');
 

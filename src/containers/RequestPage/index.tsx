@@ -23,7 +23,7 @@ const RequestPage = () => {
 
   useEffect(() => {
     dipatch(getAppStatus());
-  }, []);
+  }, [dipatch]);
 
   if (ok !== undefined && ok === false) return <Error />;
 
