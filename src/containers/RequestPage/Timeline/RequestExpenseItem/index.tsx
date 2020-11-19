@@ -1,6 +1,7 @@
+import React, { memo } from 'react';
 import { format } from 'date-fns';
-import React from 'react';
 import { TimelineItem } from 'src/store/modules/timeline/types';
+import Badge from 'src/components/Badge';
 import './style.css';
 
 interface Props {
@@ -42,14 +43,10 @@ const RequestExpenseItem = ({ item }: Props) => {
       </div>
       <div className='expense-request-item-status'>
         <span className='expense-request-item-title'>STATUS</span>
-        <div className='expense-request-item-status-badge-ok'>
-          {' '}
-          <span>{item.status}</span>
-        </div>
+        <Badge status={item.status} />
         {item.expenseEvaluation && (
           <>
             <div className='expense-request-item-status-badge-default'>
-              {' '}
               <span>Dedutivel</span>
             </div>
             <span className='expense-request-item-desc'>Valor aprovado: RS 111112,22</span>
@@ -64,4 +61,4 @@ const RequestExpenseItem = ({ item }: Props) => {
   );
 };
 
-export default RequestExpenseItem;
+export default memo(RequestExpenseItem);

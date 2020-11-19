@@ -1,0 +1,21 @@
+
+/* badges */
+.expense-request-item-status-badge-ok {
+  width: 79px;
+  height: 24px;
+  margin: 3px 0 0;
+  padding: 6px 12px;
+  border-radius: 18px;
+  border: solid 1px #03a046;
+  background-color: #e6fff0;
+  display: flex;
+}
+.expense-request-item-status-badge-ok span {
+  width: 55px;
+  height: 12px;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 1;
+  letter-spacing: normal;
+  color: #03a046;
+}

@@ -1,5 +1,5 @@
+import React, { memo } from 'react';
 import { format } from 'date-fns';
-import React from 'react';
 import { TimelineItem } from 'src/store/modules/timeline/types';
 import './style.css';
 
@@ -36,4 +36,4 @@ const RequestEvaluationItem = ({ item }: Props) => {
   );
 };
 
-export default RequestEvaluationItem;
+export default memo(RequestEvaluationItem);
