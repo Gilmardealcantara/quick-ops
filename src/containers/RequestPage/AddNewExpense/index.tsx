@@ -5,7 +5,6 @@ import Animate from 'rc-animate';
 import { ApplicationState } from 'src/store';
 import { AppAction, AppStatusState } from 'src/store/modules/appStatus/types';
 import { setEditStatus } from 'src/store/modules/appStatus/actions';
-import ReceiptAttachment from './ReceiptAttachment';
 import NewExpenseForm from './NewExpenseForm';
 
 import './style.css';
@@ -34,7 +33,6 @@ const AddNewExpense = () => {
           <div data-testid='add-new-expense-form' className='add-new-expense-form'>
             <span className='expense-form-title'>Nova Despesa</span>
             <div className='expense-form-content'>
-              <ReceiptAttachment />
               <NewExpenseForm />
             </div>
           </div>
