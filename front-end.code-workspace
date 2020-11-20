@@ -1,0 +1,24 @@
+{
+    "folders": [
+      {
+        "path": "."
+      }
+    ],
+    "extensions": {
+      "recommendations": [
+        "eamodio.gitlens",
+        "esbenp.prettier-vscode",
+        "editorconfig.editorconfig",
+        "sznajder.es7-react-js-snippets",
+        "dbaeumer.vscode-eslint"]
+    },
+    "settings": {
+      "files.eol": "\n",
+      "editor.formatOnSave": true,
+      "editor.formatOnPaste": true,
+      "editor.tabSize": 2,
+      "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+      },
+    }
+  }
