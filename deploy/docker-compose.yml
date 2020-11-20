@@ -1,0 +1,9 @@
+version: '3.8'
+services:
+  quick-ops-prod:
+    container_name: quick-ops
+    build:
+      context: ../
+      dockerfile: ./deploy/Dockerfile
+    ports:
+      - '8080:80'

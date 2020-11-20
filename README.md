@@ -36,12 +36,16 @@
   - Prettier
   - Editor Config
 
-# Test
+# Tests
 
-```sh
-yarn test # run for dev
-CI=true npm test # run and exit
-
+```sh (mac or linux)
+# run for dev
+yarn test
+# run and exit
+CI=true npm test
+# generate code coverage for local analyses
+CI=true yarn test --coverage
+google-chrome coverage/lcov-report/index.html
 ```
 
 # Build
@@ -50,4 +54,22 @@ CI=true npm test # run and exit
 yarn build
 ```
 
-# Docker deploy
+For the most efficient production build
+
+- [optimizing-performance](https://reactjs.org/docs/optimizing-performance.html)
+  - Brunch
+  - Browserify
+  - Rollup
+
+# Docker run
+
+```
+cd ./deploy
+docker-compose up
+```
+
+# TODO
+
+- Use next js
+- use styled components
+- use themes
