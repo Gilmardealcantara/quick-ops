@@ -70,6 +70,6 @@ docker-compose up
 
 # TODO
 
-- Use next js
-- use styled components
-- use themes
+- nextJS
+- Styled components
+- Themes
